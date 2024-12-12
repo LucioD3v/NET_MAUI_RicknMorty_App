@@ -19,6 +19,11 @@ namespace RicknMorty_App
             listViewCharacters.ItemsSource = data;
            loading.IsVisible = false;
         }
-    }
 
+        public void OnItemSelectedChanged(object sender, EventArgs e)
+        {
+            var tappedItem = listViewCharacters.SelectedItem;
+            Application.Current.MainPage.DisplayAlert("Rick n Morty", tappedItem.ToString(), "OK");
+        }
+    }
 }
