@@ -20,10 +20,18 @@ namespace RicknMorty_App
            loading.IsVisible = false;
         }
 
-        public void OnItemSelectedChanged(object sender, EventArgs e)
+        public void OnItemSelectedChanged(object sender, SelectedItemChangedEventArgs e)
         {
-            var tappedItem = listViewCharacters.SelectedItem;
-            Application.Current.MainPage.DisplayAlert("Rick n Morty", tappedItem.ToString(), "OK");
+            if(e.SelectedItem == null)
+                return;
+
+            //Handle the selected item (e.SelectedItem) here
+            var selectedCharacter = e.SelectedItem as Models.CharactersModel;
+
+            Application.Current.MainPage.DisplayAlert("Rick n Morty", $"Personaje: {selectedCharacter.name}", "OK");
+
+            // Clear the selection
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }
