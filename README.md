@@ -1,0 +1,1 @@
+# NET_MAUI_RicknMorty_App
