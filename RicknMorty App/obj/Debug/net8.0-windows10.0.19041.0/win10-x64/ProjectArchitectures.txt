@@ -1,0 +1,1 @@
+C:\Solutions\MAUI\NET_MAUI_RicknMorty_App\RicknMorty App\RicknMorty App.csproj;x64

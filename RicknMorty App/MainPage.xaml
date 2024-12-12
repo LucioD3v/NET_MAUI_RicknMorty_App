@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RicknMorty_App.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20,10"
+            Spacing="15" 
+            VerticalOptions="Start">
+
+          <Button
+            Text="Get Characters" 
+            Clicked="OnDataClicked"
+            HorizontalOptions="Fill"
+            BackgroundColor="Green"/>
+
+            <ActivityIndicator x:Name="loading"
+                           HeightRequest="30"
+                           Color="Green"
+                           IsRunning="True"
+                           IsVisible="False"/>
+
+            <!--<CollectionView x:Name="listViewCharacters">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2"
+                                   Source="{Binding image}"
+                                   Aspect="AspectFill"
+                                   HeightRequest="60"
+                                   WidthRequest="60" />
+                            <Label Grid.Column="1"
+                                   Text="{Binding name}"
+                                   FontAttributes="Bold"
+                                   Margin="10,0"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>-->
+
+            <ListView x:Name="listViewCharacters">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding image}"
+                                   Text="{Binding name}"
+                                   Detail="{Binding species}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
